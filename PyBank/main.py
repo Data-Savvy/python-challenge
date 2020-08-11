@@ -7,6 +7,7 @@ budget_data = os.path.join("Resources", "budget_data.csv")
 with open(budget_data) as csvfile:
     csvreader = csv.reader(csvfile, delimiter=",")
     
+    #Seperate Header from data
     csv_header = next(csvfile)
     print(f"Header: {csv_header}")
     
@@ -43,7 +44,7 @@ with open(budget_data) as csvfile:
     #Calculate Average change
     average_change = round(sum(Change)/len(Change),2)
     
-    #Print finicial statements out
+    #Print finicial statements out to terminal
     print("Financial Analysis")
     print("-------------------")
     print(f"Total Months:  {Months_count}")
@@ -59,7 +60,7 @@ with open(budget_data) as csvfile:
 
     with open(output_file,"w") as file:
     
-    # Write methods to print to Financial_Analysis_Summary 
+    # Write to text file to print Financial_Analysis_Summary 
         file.write("Financial Analysis")
         file.write("\n")
         file.write("-------------------")
